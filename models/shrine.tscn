@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3k5oom7ps7dk"]
+
+[ext_resource type="PackedScene" uid="uid://b25wvls3c877n" path="res://models/shrine.glb" id="1_dtdar"]
+[ext_resource type="Texture2D" uid="uid://bek4qunssebti" path="res://textures/rock_boulder_dry_1k/textures/rock_boulder_dry_diff_1k.jpg" id="2_yysl5"]
+[ext_resource type="Texture2D" uid="uid://bunqbtgge35ne" path="res://textures/rock_boulder_dry_1k/textures/rock_boulder_dry_disp_1k.png" id="3_wopns"]
+[ext_resource type="Texture2D" uid="uid://dnp2milas823p" path="res://textures/rock_boulder_dry_1k/textures/rock_boulder_dry_nor_dx_1k.jpg" id="4_k3x6g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eue30"]
+albedo_texture = ExtResource("2_yysl5")
+normal_enabled = true
+normal_texture = ExtResource("4_k3x6g")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_wopns")
+uv1_scale = Vector3(2, 4, 3)
+
+[node name="shrine" instance=ExtResource("1_dtdar")]
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_eue30")
+
+[node name="Sphere" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_eue30")
+
+[node name="Cube_002" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_eue30")
+
+[node name="Cylinder_001" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_eue30")
+
+[node name="Cylinder_002" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_eue30")
+
+[node name="Cube_003" parent="." index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_eue30")
+
+[node name="Cube_004" parent="." index="6"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_eue30")

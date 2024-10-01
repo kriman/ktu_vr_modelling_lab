@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://tlbylhb42mny"
+path="res://.godot/imported/Greek Doric Column.obj-461049bc6cbe2ea4372388c7c966921f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Greek Doric Column.obj-461049bc6cbe2ea4372388c7c966921f.mesh"]
+
+source_file="res://models/Greek Doric Column.obj"
+dest_files=["res://.godot/imported/Greek Doric Column.obj-461049bc6cbe2ea4372388c7c966921f.mesh", "res://.godot/imported/Greek Doric Column.obj-461049bc6cbe2ea4372388c7c966921f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
