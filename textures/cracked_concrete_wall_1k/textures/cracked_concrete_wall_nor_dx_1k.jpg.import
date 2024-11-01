@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://7psfgpk1egqp"
 path.s3tc="res://.godot/imported/cracked_concrete_wall_nor_dx_1k.jpg-ac7f903abf603a21d3e74af12ebd5dd5.s3tc.ctex"
+path.etc2="res://.godot/imported/cracked_concrete_wall_nor_dx_1k.jpg-ac7f903abf603a21d3e74af12ebd5dd5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/cracked_concrete_wall_1k/textures/cracked_concrete_wall_nor_dx_1k.jpg"
-dest_files=["res://.godot/imported/cracked_concrete_wall_nor_dx_1k.jpg-ac7f903abf603a21d3e74af12ebd5dd5.s3tc.ctex"]
+dest_files=["res://.godot/imported/cracked_concrete_wall_nor_dx_1k.jpg-ac7f903abf603a21d3e74af12ebd5dd5.s3tc.ctex", "res://.godot/imported/cracked_concrete_wall_nor_dx_1k.jpg-ac7f903abf603a21d3e74af12ebd5dd5.etc2.ctex"]
 
 [params]
 

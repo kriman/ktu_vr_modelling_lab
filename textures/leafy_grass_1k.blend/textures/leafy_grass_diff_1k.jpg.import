@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://vcajtixh0rst"
 path.s3tc="res://.godot/imported/leafy_grass_diff_1k.jpg-1b6d3f965abfd66cd72fffd455a4d027.s3tc.ctex"
+path.etc2="res://.godot/imported/leafy_grass_diff_1k.jpg-1b6d3f965abfd66cd72fffd455a4d027.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/leafy_grass_1k.blend/textures/leafy_grass_diff_1k.jpg"
-dest_files=["res://.godot/imported/leafy_grass_diff_1k.jpg-1b6d3f965abfd66cd72fffd455a4d027.s3tc.ctex"]
+dest_files=["res://.godot/imported/leafy_grass_diff_1k.jpg-1b6d3f965abfd66cd72fffd455a4d027.s3tc.ctex", "res://.godot/imported/leafy_grass_diff_1k.jpg-1b6d3f965abfd66cd72fffd455a4d027.etc2.ctex"]
 
 [params]
 

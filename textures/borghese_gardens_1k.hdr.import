@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c36wqb84y4x2j"
-path.s3tc="res://.godot/imported/tree_stump_01_diff_1k.jpg-1ef83cefb3e9157a7fe96519aa542dfc.s3tc.ctex"
-path.etc2="res://.godot/imported/tree_stump_01_diff_1k.jpg-1ef83cefb3e9157a7fe96519aa542dfc.etc2.ctex"
+uid="uid://1mvvtmck7qdb"
+path.bptc="res://.godot/imported/borghese_gardens_1k.hdr-0399f2679cb23e09e26cf595228c3324.bptc.ctex"
+path.astc="res://.godot/imported/borghese_gardens_1k.hdr-0399f2679cb23e09e26cf595228c3324.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/tree_stump_01_1k.blend/textures/tree_stump_01_diff_1k.jpg"
-dest_files=["res://.godot/imported/tree_stump_01_diff_1k.jpg-1ef83cefb3e9157a7fe96519aa542dfc.s3tc.ctex", "res://.godot/imported/tree_stump_01_diff_1k.jpg-1ef83cefb3e9157a7fe96519aa542dfc.etc2.ctex"]
+source_file="res://textures/borghese_gardens_1k.hdr"
+dest_files=["res://.godot/imported/borghese_gardens_1k.hdr-0399f2679cb23e09e26cf595228c3324.bptc.ctex", "res://.godot/imported/borghese_gardens_1k.hdr-0399f2679cb23e09e26cf595228c3324.astc.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://emp6lv26f26v"
 path.s3tc="res://.godot/imported/IronFence_baseColor.png-11e0eb4f978c50e8baebe85465a33a18.s3tc.ctex"
+path.etc2="res://.godot/imported/IronFence_baseColor.png-11e0eb4f978c50e8baebe85465a33a18.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/gate/textures/IronFence_baseColor.png"
-dest_files=["res://.godot/imported/IronFence_baseColor.png-11e0eb4f978c50e8baebe85465a33a18.s3tc.ctex"]
+dest_files=["res://.godot/imported/IronFence_baseColor.png-11e0eb4f978c50e8baebe85465a33a18.s3tc.ctex", "res://.godot/imported/IronFence_baseColor.png-11e0eb4f978c50e8baebe85465a33a18.etc2.ctex"]
 
 [params]
 

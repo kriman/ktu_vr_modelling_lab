@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://coe14pwg1gn8c"
 path.s3tc="res://.godot/imported/IronFence_normal.png-b18e5399c28caa589f316717a04db907.s3tc.ctex"
+path.etc2="res://.godot/imported/IronFence_normal.png-b18e5399c28caa589f316717a04db907.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/gate/textures/IronFence_normal.png"
-dest_files=["res://.godot/imported/IronFence_normal.png-b18e5399c28caa589f316717a04db907.s3tc.ctex"]
+dest_files=["res://.godot/imported/IronFence_normal.png-b18e5399c28caa589f316717a04db907.s3tc.ctex", "res://.godot/imported/IronFence_normal.png-b18e5399c28caa589f316717a04db907.etc2.ctex"]
 
 [params]
 
