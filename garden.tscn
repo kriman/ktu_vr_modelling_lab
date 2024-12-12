@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://7rnwtwynyryo"]
+[gd_scene load_steps=75 format=3 uid="uid://7rnwtwynyryo"]
 
 [ext_resource type="Texture2D" uid="uid://kmcsrvn1gfpr" path="res://textures/rocky_trail/rocky_trail_diff_1k.jpg" id="1_3t4wf"]
 [ext_resource type="Texture2D" uid="uid://vcajtixh0rst" path="res://textures/leafy_grass_1k.blend/textures/leafy_grass_diff_1k.jpg" id="1_e6rq3"]
@@ -27,8 +27,16 @@
 [ext_resource type="Script" path="res://scripts/bust.gd" id="23_i4hmh"]
 [ext_resource type="AudioStream" uid="uid://cerer0jfi84c6" path="res://audio/ui_quest_update.ogg" id="23_jh0wy"]
 [ext_resource type="Script" path="res://scripts/exit.gd" id="23_qqkn3"]
+[ext_resource type="AudioStream" uid="uid://df7sdwn7bsv4t" path="res://audio/whoosh2.wav" id="24_05mmv"]
+[ext_resource type="AudioStream" uid="uid://cfv11dux3tgti" path="res://audio/Footstep_Dirt_00.mp3" id="26_fjvte"]
 [ext_resource type="Script" path="res://scripts/player_interaction.gd" id="27_5hqyu"]
+[ext_resource type="AudioStream" uid="uid://bgck57ykn5ci1" path="res://audio/Fire impact 1.wav" id="27_a5ewh"]
 [ext_resource type="Script" path="res://scripts/label.gd" id="28_jjre2"]
+[ext_resource type="AudioStream" uid="uid://t5a17uyoryvo" path="res://audio/footstep05.ogg" id="29_jkjo0"]
+[ext_resource type="AudioStream" uid="uid://rq68eo6m3s5x" path="res://audio/blessing2.ogg" id="30_julmw"]
+[ext_resource type="AudioStream" uid="uid://luglh1jk3a84" path="res://audio/Angelic Forest - Doug Maxwell_Media Right Productions.mp3" id="32_4y0kg"]
+[ext_resource type="AudioStream" uid="uid://cr1evexvtso7u" path="res://audio/birds-isaiah658.ogg" id="34_k07d2"]
+[ext_resource type="AudioStream" uid="uid://ddy2jce1iheuv" path="res://audio/amb_cricket_1.ogg" id="35_1xvk2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lp3oj"]
 panorama = ExtResource("2_621en")
@@ -39,8 +47,17 @@ sky_material = SubResource("PanoramaSkyMaterial_lp3oj")
 [sub_resource type="Environment" id="Environment_x0jig"]
 background_mode = 2
 sky = SubResource("Sky_hgoyk")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.5
+reflected_light_source = 2
 tonemap_mode = 2
+tonemap_exposure = 1.39
 glow_enabled = true
+fog_sun_scatter = 0.6
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_sky_affect = 0.9
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x0j7u"]
 albedo_texture = ExtResource("1_e6rq3")
@@ -82,6 +99,7 @@ height = 288.295
 radius = 43.8567
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_06i4w"]
+height = 1.0
 radius = 2.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rt2a0"]
@@ -171,6 +189,11 @@ size = Vector3(3, 2, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_i5q1b"]
 size = Vector3(0.328369, 0.741821, 0.331543)
 
+[sub_resource type="FogMaterial" id="FogMaterial_exqg2"]
+emission = Color(1, 1, 1, 1)
+height_falloff = 0.75281
+edge_fade = 0.303143
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uak6s"]
 height = 1.9
 
@@ -198,7 +221,7 @@ shadow_size = 3
 environment = SubResource("Environment_x0jig")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(0.866025, 0.383022, -0.321394, 0, 0.642788, 0.766044, 0.5, -0.663414, 0.55667, 0, 0, 0)
 shadow_enabled = true
 
 [node name="level0_ground" type="MeshInstance3D" parent="."]
@@ -544,10 +567,18 @@ script = ExtResource("23_qqkn3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level0_ground/exit"]
 shape = SubResource("BoxShape3D_vdr5d")
 
+[node name="whoosh" type="AudioStreamPlayer3D" parent="level0_ground/exit"]
+stream = ExtResource("24_05mmv")
+volume_db = -18.0
+
 [node name="bust" type="RigidBody3D" parent="level0_ground" groups=["interactable", "pickupable"]]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 7.59613, 0.224881, -9.16365)
 script = ExtResource("23_i4hmh")
 metadata/name = "Head of the fallen soldier"
+
+[node name="collision_sound" type="AudioStreamPlayer3D" parent="level0_ground/bust"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 7.59613, -0.224881, -9.16365)
+stream = ExtResource("26_fjvte")
 
 [node name="bust_model" parent="level0_ground/bust" groups=["pickupable"] instance=ExtResource("19_m12oq")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.014928, 0)
@@ -555,6 +586,14 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.014928, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level0_ground/bust"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0318603, 0.373121, 0.0634766)
 shape = SubResource("BoxShape3D_i5q1b")
+
+[node name="claim_sound" type="AudioStreamPlayer3D" parent="level0_ground/bust"]
+stream = ExtResource("27_a5ewh")
+
+[node name="FogVolume" type="FogVolume" parent="level0_ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -11.2016)
+size = Vector3(6, 3, 2)
+material = SubResource("FogMaterial_exqg2")
 
 [node name="player" type="CharacterBody3D" parent="." groups=["players"]]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -8.5)
@@ -576,8 +615,10 @@ script = ExtResource("27_5hqyu")
 [node name="Hold_pos" type="Node3D" parent="player/head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
 
-[node name="next_quest_sound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("23_jh0wy")
+[node name="collision_sound" type="AudioStreamPlayer3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.158613, 0.2, 0)
+stream = ExtResource("29_jkjo0")
+volume_db = -25.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -666,7 +707,39 @@ grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_6gx00")
 
+[node name="endscreen" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(1, 1, 1, 0)
+
+[node name="audio" type="Node3D" parent="."]
+
+[node name="shrine_blessing_sound" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("30_julmw")
+
+[node name="next_quest_sound" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("23_jh0wy")
+
+[node name="background_music" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("32_4y0kg")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[node name="bird_ambience" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("34_k07d2")
+volume_db = -25.0
+autoplay = true
+parameters/looping = true
+
+[node name="cricket_ambiance" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("35_1xvk2")
+volume_db = -15.0
+
 [connection signal="body_entered" from="level0_ground/statue/checkpoint" to="level0_ground/bust" method="_on_checkpoint_body_entered"]
 [connection signal="body_entered" from="level0_ground/exit" to="level0_ground/exit" method="_on_body_entered"]
+[connection signal="body_entered" from="level0_ground/bust" to="level0_ground/floor_staticbody/CollisionShape3D" method="_on_bust_body_entered"]
 [connection signal="timeout" from="Control/Timer" to="Control/Disa1" method="_on_timer_timeout"]
 [connection signal="timeout" from="Control/Timer" to="Control/Disa2" method="_on_timer_timeout"]

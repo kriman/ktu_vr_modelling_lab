@@ -1,6 +1,6 @@
 extends Node
 
-@onready var next_quest_audio_player = get_node("/root/main/next_quest_sound")
+@onready var next_quest_audio_player = get_node("/root/main/audio/next_quest_sound")
 @onready var shrines = get_tree().get_nodes_in_group("shrines")
 @onready var checkpoints = get_tree().get_nodes_in_group("checkpoints")
 @onready var gate = get_node("/root/main/level0_ground/gate")
@@ -10,21 +10,22 @@ extends Node
 @onready var disa1 = get_node("/root/main/Control/Disa1")
 @onready var disa2 = get_node("/root/main/Control/Disa2")
 @onready var timer = get_node("/root/main/Control/Timer")
-
+@onready var cricket_ambiance = get_node("/root/main/audio/cricket_ambiance")
+@onready var endscreen = get_node("/root/main/Control/endscreen")
 
 enum QUEST_STATUS {ACTIVE, COMPLETED, HIDDEN}
 
 var quest_list = [
 	"Explore the garden", # check all 4 checkpoints
 	"Prayers", # pray at all 3 shrines
-	"Sacrafice", # take the bust to the statue
+	"Sacrifice", # take the bust to the statue
 	"Salvation" # leave the garden
 ]
 
 var quests = {
 	"Explore the garden": QUEST_STATUS.ACTIVE,
 	"Prayers": QUEST_STATUS.HIDDEN,
-	"Sacrafice": QUEST_STATUS.HIDDEN,
+	"Sacrifice": QUEST_STATUS.HIDDEN,
 	"Salvation": QUEST_STATUS.HIDDEN
 }
 
@@ -88,6 +89,10 @@ func _process(_delta: float) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+	
+	var random_num = randi_range(0, 100_000)
+	if random_num < 300:
+		cricket_ambiance.play()
 
 
 func checkAllPraised() -> void:
@@ -121,13 +126,18 @@ func end_q2() -> void:
 	bust.enabled = true
 
 func end_q3() -> void:
-	Global.end_quest("Sacrafice")
+	Global.end_quest("Sacrifice")
 	gate.visible = false
 	exit.enabled = true
 
 func end_q4() -> void:
 	Global.end_quest("Salvation")
 	label.text = "END"
+	endscreen.visible = true
+	while endscreen.color.a < 1:
+		endscreen.color.a += 0.015
+		await get_tree().create_timer(0.01).timeout
+		
 
 
 func cheats() -> void:

@@ -1,5 +1,8 @@
 extends StaticBody3D
 
+@onready var shrine_audio_player = get_node("/root/main/audio/shrine_blessing_sound")
+
+
 var PRAISED = false
 var INTERACTION_ENABLED = false
 
@@ -18,6 +21,7 @@ func set_interaction_enabled(value: bool) -> void:
 func interact() -> void:
 	var text = "Praying at %s" % get_meta("name")
 	Global.update_disappearing_label2(text)
+	shrine_audio_player.play()
 	if INTERACTION_ENABLED:
 		PRAISED = true
 		Global.checkAllPraised()

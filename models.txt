@@ -5,3 +5,17 @@ statue - https://www.cgtrader.com/product/greco-roman-renaissance-statue-sample
 columns x6 - https://www.cgtrader.com/product/greek-doric-column-3d-model
 tree stump x4 - https://polyhaven.com/a/tree_stump_01
 roads - basic shapes
+
+
+actions:
+	blessing - https://opengameart.org/content/spell-sounds-starter-pack, GPL 3.0 p0ss
+	footsteps - https://opengameart.org/content/fantasy-sound-effects-library, CC-BY 3.0 Little Robot Sound Factory
+	collision sound for bust https://opengameart.org/content/spell-sounds-starter-pack, GPL 3.0 p0ss
+	sacrifice sound - https://opengameart.org/content/magic-sfx-sample, CC-BY 3.0 ViRiX
+	end sound - https://opengameart.org/content/whoosh-2, CC-BY-SA 3.0 Bart Kelsey
+ambiance:
+- background music - Doug Maxwell - Angelic Forest - Youtube Audio Library
+- footsteps - https://opengameart.org/content/fantasy-sound-effects-library, CC-BY 3.0 Little Robot Sound Factory
+- cricket - https://opengameart.org/content/ambient-bird-cricket-and-frog, CC-BY 3.0 Blender Foundation
+- birds - https://opengameart.org/content/ambient-bird-cricket-and-frog, CC-BY 3.0 Blender Foundation
+- volumefog
